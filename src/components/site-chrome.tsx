@@ -20,10 +20,10 @@ export function SiteHeader() {
       <Link to="/" className="font-display text-xl font-semibold" aria-label={`${property.name} home`}>{property.name}</Link>
       <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
         {links.map((item) => <a key={item.href} href={item.href} className={`text-sm transition-colors hover:text-primary ${pathname === item.href ? "font-semibold text-primary" : "text-muted-foreground"}`}>{item.label}</a>)}
-        <Button asChild size="sm"><Link to="/booking">Book now</Link></Button>
+        <Button asChild className="min-h-9 px-4"><Link to="/booking">Book now</Link></Button>
       </nav>
       <div className="flex items-center gap-2 lg:hidden">
-        <Button asChild size="sm"><Link to="/booking">Book now</Link></Button>
+        <Button asChild className="min-h-9 px-4"><Link to="/booking">Book now</Link></Button>
         <Button variant="ghost" size="icon" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>{open ? <X /> : <Menu />}</Button>
       </div>
     </div>

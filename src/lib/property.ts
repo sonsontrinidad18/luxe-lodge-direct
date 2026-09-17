@@ -23,24 +23,24 @@ export const property = {
   type: "Entire rental unit",
   rating: 4.96,
   reviewCount: 25,
+  currency: "PHP",
+  nightlyRate: 0,
+  cleaningFee: 0,
+  serviceRate: 0,
   email: "host@example.com",
 };
 
-export const images = [
-  { src: photo1.url, alt: "Cozy studio living and sleeping area with olive cabinetry and warm yellow curtains", width: 1200, height: 2133 },
-  { src: photo2.url, alt: "Shared swimming pool at Aurora Escalades Tower", width: 1200, height: 2133 },
+export const heroPhoto = { src: photo1.url, alt: "Cozy studio living and sleeping area with olive cabinetry and warm yellow curtains", width: 1200, height: 2133 };
+export const poolPhoto = { src: photo2.url, alt: "Shared swimming pool at Aurora Escalades Tower", width: 1200, height: 2133 };
+export const diningPhoto = { src: photo5.url, alt: "Cozy dining nook with warm ambient lighting", width: 1200, height: 2133 };
+export const kitchenettePhoto = { src: photo6.url, alt: "Studio kitchenette with refrigerator, sink, and storage", width: 1200, height: 2133 };
+export const images = [heroPhoto, poolPhoto,
   { src: photo3.url, alt: "Compact dining table set for two guests", width: 1200, height: 1600 },
   { src: photo4.url, alt: "Decorative wall clock in the studio", width: 1200, height: 1600 },
-  { src: photo5.url, alt: "Cozy dining nook with warm ambient lighting", width: 1200, height: 2133 },
-  { src: photo6.url, alt: "Studio kitchenette with refrigerator, sink, and storage", width: 1200, height: 2133 },
+  diningPhoto, kitchenettePhoto,
   { src: photo7.url, alt: "Kitchen storage stocked with dishes and cups", width: 1200, height: 1600 },
   { src: photo8.url, alt: "View through the studio from the sofa bed toward the kitchenette", width: 1200, height: 2133 },
 ];
-
-export const heroPhoto = images[0];
-export const poolPhoto = images[1];
-export const diningPhoto = images[4];
-export const kitchenettePhoto = images[5];
 
 export const amenities = [
   "Wi-Fi", "Air conditioning", "Kitchenette", "TV", "Dedicated workspace", "Private bathroom", "Swimming pool", "Elevator access",
@@ -70,3 +70,7 @@ export const guideSections = [
   { id: "keys", title: "Key return", eyebrow: "Final step", text: "Key-return instructions are shared privately with confirmed guests to keep building access secure." },
   { id: "emergency", title: "Emergency contacts", eyebrow: "Help", text: "Host and building assistance details will appear in the private guide provided after booking." },
 ];
+
+export function formatCurrency(value: number) {
+  return new Intl.NumberFormat("en-PH", { style: "currency", currency: property.currency, maximumFractionDigits: 0 }).format(value);
+}

@@ -19,8 +19,8 @@
  */
 
 @theme inline {
-  --font-sans: "Manrope", sans-serif;
-  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Newsreader", serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -73,33 +73,34 @@
 
 :root {
   --radius: 0.35rem;
-  --background: oklch(0.985 0.006 84);
-  --foreground: oklch(0.22 0.018 72);
+  --background: oklch(0.985 0.008 91);
+  --foreground: oklch(0.235 0.012 78);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.32 0.04 127);
-  --primary-foreground: oklch(0.985 0.006 84);
-  --secondary: oklch(0.94 0.018 85);
-  --secondary-foreground: oklch(0.22 0.018 72);
-  --muted: oklch(0.945 0.01 82);
-  --muted-foreground: oklch(0.48 0.02 71);
-  --accent: oklch(0.88 0.04 82);
-  --accent-foreground: oklch(0.22 0.018 72);
+  --primary: oklch(0.405 0.052 130);
+  --primary-foreground: oklch(0.985 0.008 91);
+  --secondary: oklch(0.955 0.018 91);
+  --secondary-foreground: oklch(0.235 0.012 78);
+  --muted: oklch(0.94 0.009 88);
+  --muted-foreground: oklch(0.49 0.014 77);
+  --accent: oklch(0.89 0.047 95);
+  --accent-foreground: oklch(0.235 0.012 78);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.86 0.015 80);
-  --input: oklch(0.86 0.015 80);
-  --ring: oklch(0.45 0.05 126);
+  --border: oklch(0.875 0.014 87);
+  --input: oklch(0.875 0.014 87);
+  --ring: oklch(0.45 0.052 130);
   --hero-foreground: oklch(0.985 0.006 84);
   --hero-button: oklch(0.92 0.028 82);
   --hero-button-foreground: oklch(0.22 0.018 72);
-  --footer: oklch(0.19 0.018 71);
+  --footer: oklch(0.245 0.023 126);
   --footer-foreground: oklch(0.96 0.01 84);
   --footer-muted: oklch(0.76 0.016 82);
   --footer-border: oklch(0.34 0.016 75);
-  --shadow-elevated: 0 18px 50px color-mix(in oklab, var(--foreground) 14%, transparent);
+  --shadow-elevated: 0 14px 36px color-mix(in oklab, var(--foreground) 10%, transparent);
+  --shadow-soft: 0 8px 24px color-mix(in oklab, var(--foreground) 8%, transparent);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -170,5 +171,6 @@
 @utility footer-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-footer-foreground); }
 @utility field { width: 100%; min-height: 3rem; border: 1px solid var(--color-border); background: var(--color-background); padding: 0.7rem 0.85rem; font-size: 0.875rem; outline: none; &:focus { border-color: var(--color-ring); box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-ring) 18%, transparent); } }
 @utility section-pad { padding-block: clamp(4rem, 8vw, 7rem); }
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
