@@ -6,8 +6,15 @@ import { Button } from "@/components/ui/button";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { formatCurrency, heroPhoto, property } from "@/lib/property";
 
-type BookingSearch = { checkIn: string | undefined; checkOut: string | undefined; guests: number };
-export const Route = createFileRoute("/booking")({ validateSearch: (search: Record<string, unknown>): BookingSearch => ({ checkIn: typeof search["checkIn"] === "string" ? search["checkIn"] : undefined, checkOut: typeof search["checkOut"] === "string" ? search["checkOut"] : undefined, guests: Number(search["guests"]) || 2 }), head: () => ({ meta: [
+type BookingSearch = { checkIn?: string; checkOut?: string; guests?: number };
+export const Route = createFileRoute("/booking")({ validateSearch: (search: Record<string, unknown>): BookingSearch => {
+ const parsed: BookingSearch = {};
+ if (typeof search["checkIn"] === "string") parsed.checkIn = search["checkIn"];
+ if (typeof search["checkOut"] === "string") parsed.checkOut = search["checkOut"];
+ const guests = Number(search["guests"]);
+ if (Number.isFinite(guests) && guests > 0) parsed.guests = guests;
+ return parsed;
+}, head: () => ({ meta: [
  { title: `Book Your Stay — ${property.name}` }, { name: "description", content: `Check sample availability and plan your direct stay at ${property.name} in Siargao.` }, { property: "og:title", content: `Book ${property.name}` }, { property: "og:description", content: "Choose your dates, review transparent pricing, and request your stay." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
 ] }), component: BookingPage });
 
