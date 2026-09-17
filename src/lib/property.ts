@@ -26,12 +26,11 @@ export const property = {
   instagram: "@thecanopyhouse",
 };
 
-export const images = [
-  { src: heroImage, alt: "The Canopy House and infinity pool at blue hour", width: 1920, height: 1200 },
-  { src: livingImage, alt: "Open living room overlooking the pool", width: 1408, height: 1056 },
-  { src: bedroomImage, alt: "Primary bedroom with tropical garden views", width: 1008, height: 1312 },
-  { src: poolImage, alt: "Infinity pool overlooking the sea at sunset", width: 1408, height: 1008 },
-];
+export const heroPhoto = { src: heroImage, alt: "The Canopy House and infinity pool at blue hour", width: 1920, height: 1200 };
+export const livingPhoto = { src: livingImage, alt: "Open living room overlooking the pool", width: 1408, height: 1056 };
+export const bedroomPhoto = { src: bedroomImage, alt: "Primary bedroom with tropical garden views", width: 1008, height: 1312 };
+export const poolPhoto = { src: poolImage, alt: "Infinity pool overlooking the sea at sunset", width: 1408, height: 1008 };
+export const images = [heroPhoto, livingPhoto, bedroomPhoto, poolPhoto];
 
 export const amenities = ["High-speed Wi-Fi", "Air conditioning", "Chef's kitchen", "Smart TV", "Infinity pool", "Private parking", "24/7 security"];
 
